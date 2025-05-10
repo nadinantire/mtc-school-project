@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>ECOURSES - Online Courses HTML Template</title>
+    <title>MTC-TSS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/logo.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,47 +22,255 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #fd7e14;
+            --secondary-color: #fd7e14;
+            --accent-color: #f6c23e;
+            --text-light: #f8f9fc;
+            --text-dark: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f8f9fc;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 1rem;
+        }
+        
+        .icon-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .icon-box i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+        
+        .mission-item {
+            padding: 1rem;
+            border-left: 3px solid var(--accent-color);
+            margin-bottom: 1rem;
+            background-color: rgba(246, 194, 62, 0.1);
+        }
+        
+        .program-box {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .program-box h4 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .program-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .program-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .program-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        .staff-count {
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .staff-count h3 {
+            margin-bottom: 0;
+        }
+        
+        .founder-bio {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+        
+        .founder-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        
+        .feature-item {
+            padding: 1rem;
+            border-left: 3px solid var(--primary-color);
+            margin-bottom: 1rem;
+            background-color: rgba(78, 115, 223, 0.05);
+        }
+        
+        .strategy-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .strategy-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .strategy-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .strategy-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid d-none d-lg-block">
-        <div class="row align-items-center py-4 px-xl-5">
-            <div class="col-lg-3">
-                <a href="" class="text-decoration-none">
-                    <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
-                </a>
-            </div>
-            <div class="col-lg-3 text-right">
-                <div class="d-inline-flex align-items-center">
-                    <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
-                    <div class="text-left">
-                        <h6 class="font-weight-semi-bold mb-1">Our Office</h6>
-                        <small>123 Street, New York, USA</small>
-                    </div>
+<!-- Topbar Start -->
+<div class="container-fluid d-none d-lg-block">
+    <div class="row align-items-center py-4 px-xl-5">
+        <div class="col-lg-3">
+            <a href="" class="text-decoration-none">
+                <div class="d-flex align-items-center">
+                    <img src="img/logo.jpg" alt="MTC TSS Logo" class="mr-2" style="width: 100px; height: 100px;">
+                    <h1 class="m-0"><span class="text-primary">MTC</span>TSS</h1>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 text-right">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
+                <div class="text-left">
+                    <h6 class="font-weight-semi-bold mb-1">Our Office</h6>
+                    <small>Muhanga, Nyamabuye, Gahogo, Nyarucyamu 2</small>
                 </div>
             </div>
-            <div class="col-lg-3 text-right">
-                <div class="d-inline-flex align-items-center">
-                    <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
-                    <div class="text-left">
-                        <h6 class="font-weight-semi-bold mb-1">Email Us</h6>
-                        <small>info@example.com</small>
-                    </div>
+        </div>
+        <div class="col-lg-3 text-right">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
+                <div class="text-left">
+                    <h6 class="font-weight-semi-bold mb-1">Email Us</h6>
+                    <small>muhatech20@yahoo.com</small>
                 </div>
             </div>
-            <div class="col-lg-3 text-right">
-                <div class="d-inline-flex align-items-center">
-                    <i class="fa fa-2x fa-phone text-primary mr-3"></i>
-                    <div class="text-left">
-                        <h6 class="font-weight-semi-bold mb-1">Call Us</h6>
-                        <small>+012 345 6789</small>
-                    </div>
+        </div>
+        <div class="col-lg-3 text-right">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-2x fa-phone text-primary mr-3"></i>
+                <div class="text-left">
+                    <h6 class="font-weight-semi-bold mb-1">Call Us</h6>
+                    <small>+250 0784990502</small>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
+</div>
+<!-- Topbar End -->
 
 
     <!-- Navbar Start -->
@@ -71,23 +278,32 @@
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
-                    <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Subjects</h5>
+                    <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Amashami</h5>
                     <i class="fa fa-angle-down text-primary"></i>
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
                     <div class="navbar-nav w-100">
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Web Design <i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <a href="#" class="nav-link" data-toggle="dropdown">ICT <i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">HTML</a>
-                                <a href="" class="dropdown-item">CSS</a>
-                                <a href="" class="dropdown-item">jQuery</a>
+                                <a href="" class="dropdown-item">SWD</a>
+                                <a href="" class="dropdown-item">NIT</a>
                             </div>
                         </div>
-                        <a href="" class="nav-item nav-link">Apps Design</a>
-                        <a href="" class="nav-item nav-link">Marketing</a>
-                        <a href="" class="nav-item nav-link">Research</a>
-                        <a href="" class="nav-item nav-link">SEO</a>
+    
+                        <a href="" class="nav-item nav-link">ACC</a>
+                        <a href="" class="nav-item nav-link">AUTO</a>
+                        <a href="" class="nav-item nav-link">F&BO</a>
+                        <a href="" class="nav-item nav-link">BDC</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown">Level One<i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <a href="" class="dropdown-item">AUTO</a>
+                                <a href="" class="dropdown-item">HD</a>
+                                <a href="" class="dropdown-item">CAL</a>
+                                <a href="" class="dropdown-item">BDC</a>
+                            </div>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -101,242 +317,367 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="about.html" class="nav-item nav-link active">About</a>
-                            <a href="course.html" class="nav-item nav-link">Courses</a>
-                            <a href="teacher.html" class="nav-item nav-link">Teachers</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="blog.html" class="dropdown-item">Blog List</a>
-                                    <a href="single.html" class="dropdown-item">Blog Detail</a>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="teacher.html" class="nav-item nav-link">Meat our Team</a>
+                            <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                         </div>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Join Now</a>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="files/Nadine.pdf
+                        ">Kuraho Babyeyi</a>   
                     </div>
                 </nav>
             </div>
         </div>
     </div>
     <!-- Navbar End -->
-
-
-    <!-- Header Start -->
-    <div class="container-fluid page-header" style="margin-bottom: 90px;">
-        <div class="container">
-            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
-                <h3 class="display-4 text-white text-uppercase">About</h3>
-                <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">About</p>
-                </div>
+ <!-- Header Start -->
+ <div class="container-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Ibitwerekeyeho</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Ibitwerekeyeho</p>
             </div>
         </div>
     </div>
-    <!-- Header End -->
+</div>
+<!-- Header End -->
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="img/about.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <div class="text-left mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                        <h1>Innovative Way To Learn</h1>
-                    </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam ipsum stet</p>
-                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
-                </div>
+<!-- About Section -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid rounded about-img" src="img/about.jpg" alt="Muhanga Technical Center">
             </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Registration Start -->
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <div class="mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Courses</h5>
-                        <h1 class="text-white">30% Off For New Students</h1>
-                    </div>
-                    <p class="text-white">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor</p>
-                    <ul class="list-inline text-white m-0">
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
-                    </ul>
+            <div class="col-lg-7">
+                <div class="text-left mb-4 section-title">
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Ibitwerekeyeho</h5>
+                    <h1>Uko muhanga technical center yavutse</h1>
                 </div>
-                <div class="col-lg-5">
-                    <div class="card border-0">
-                        <div class="card-header bg-light text-center p-4">
-                            <h1 class="m-0">Sign Up Now</h1>
-                        </div>
-                        <div class="card-body rounded-bottom bg-primary p-5">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your name" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your email" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select a course</option>
-                                        <option value="1">Course 1</option>
-                                        <option value="2">Course 1</option>
-                                        <option value="3">Course 1</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Registration End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
-                <h1>What Say Our Students</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-1.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-2.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-3.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
-        <div class="row pt-5">
-            <div class="col-lg-7 col-md-12">
-                <div class="row">
-                    <div class="col-md-6 mb-5">
-                        <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
-                        <div class="d-flex justify-content-start mt-4">
-                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-light btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-5">
-                        <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Courses</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Design</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Marketing</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Research</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>SEO</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-12 mb-5">
-                <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
-                <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        <div class="row">
-            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Domain Name</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                <p class="lead">
+                    Muhanga Technical Center (MTC) ni ishuri ryigenga ryigisha imyuga n'ubumenyingiro riherereye mu ntara y'amajyepfo, akarere ka muhanga, umurenge wa nyamabuye, akagali ka gahogo umudugudu wa nyarucyamo.
                 </p>
-            </div>
-            <div class="col-lg-6 text-center text-md-right">
-                <ul class="nav d-inline-flex">
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Terms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Help</a>
-                    </li>
-                </ul>
+                <p>
+                    Iri shuri ryatangiranye n'umwaka w'amashuri wa 2012 ritangira ari VTC rifite amashami atatu:
+                    ubwubatsi, amashanyarazi n'ubukanishi bw'imodoka.
+                </p>
+                <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-3">
+                    <i class="fas fa-info-circle me-2"></i> Learn More
+                </a>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="text-center mb-5 section-title mx-auto">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Uwashinze Ishuri</h5>
+            <h1>EMMANUEL HAVUGIMANA</h1>
+            <div class="d-flex justify-content-center">
+                <div class="w-50" style="height: 3px; background-color: var(--primary-color);"></div>
+            </div>
+        </div>
+        
+        <div class="founder-bio">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="img/owner.jpg" alt="Emmanuel Havugimana" class="founder-img">
+                </div>
+                <div class="col-md-8">
+                    <h3 class="mb-3">Emmanuel Havugimana</h3>
+                    <p class="lead">Umuyobozi w'Ishuri Muhanga Technical Center</p>
+                    <p>
+                        Emmanuel Havugimana ni umwe mu bashinze ishuri rya Muhanga Technical Center mu mwaka wa 2012. 
+                        Afite intego yo guteza imbere urubyiruko rw'u Rwanda binyuze mu myigishirize y'imyuga n'ubumenyingiro 
+                        ndetse no kubafasha kwihangira imirimo.
+                    </p>
+                    <p>
+                        Yiyemeje guhanga ishuri rizaba icyitegererezo mu Karere ka Muhanga ndetse no mu Rwanda rwose,
+                        ritanga uburezi bufite ireme kandi buhuye n'ibikenewe ku isoko ry'umurimo.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-primary me-2">
+                            <i class="fas fa-envelope me-1"></i> Contact
+                        </a>
+                        <a href="#" class="btn btn-outline-primary">
+                            <i class="fas fa-user me-1"></i> Biography
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<!-- Programs Section -->
+<div class="container-fluid py-5 bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5 section-title mx-auto">
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Amahugurwa</h5>
+                    <h1>AMASHAMI</h1>
+                    <div class="d-flex justify-content-center">
+                        <div class="w-50" style="height: 3px; background-color: var(--primary-color);"></div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="program-box">
+                            <h4><i class="fas fa-tools me-2"></i> ICYICIRO CYA VTC</h4>
+                            <ul class="program-list">
+                                <li>UBWUBATSI</li>
+                                <li>UBUKANISHI BW'IMODOKA</li>
+                                <li>GUTUNGANYA IMISATSI N'INZARA</li>
+                                <li>GUTEKA NO KWAKIRA ABANTU</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="program-box">
+                            <h4><i class="fas fa-graduation-cap me-2"></i> ICYICIRO CYA TSS</h4>
+                            <ul class="program-list">
+                                <li>AUTOMOBILE TECHNOLOGY</li>
+                                <li>FOOD AND BEVERAGE OPERATIONS</li>
+                                <li>NETWORK AND INTERNET TECHNOLOGY</li>
+                                <li>SOFTWARE DEVELOPMENT</li>
+                                <li>BUILDING CONSTRUCTION</li>
+                                <li>ACCOUNTING</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-count mt-4">
+                    <h3><i class="fas fa-users me-2"></i> HAMWE N'UMUBARE W'ABAKOZI</h3>
+                    <p class="lead mb-0">Turafite abakozi bafite ubumenyi n'ubunararibonye mu byiciro byose twabonetse</p>
+                </div>
+                <div class="founder-bio">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center">
+                            <img src="img/madame.jpg" alt="Emmanuel Havugimana" class="founder-img">
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="mb-3">Madame Gretude Nyirarukundo</h3>
+                            <p class="lead">Ushizwe guhuza ibikorwa n'imiyoborere</p>
+                            <p>
+                                Madame Gretude Nyirarukundo afite impamyabushobozi y'icyiciro cya 2 cya kaminuza muburezi.
+                                Akaba yaratangiranye n'ishuri MTC mu mwaka wa 2012 aho yakoraga nk'umuyobozi w'ishuri kugeza 2017 
+                                ahindurirwa inshingano agirwa ushizwe guhuza ibikorwa n'imiyoborere 
+                            </p>
+                            <div class="mt-4">
+                                <a href="#" class="btn btn-primary me-2">
+                                    <i class="fas fa-envelope me-1"></i> Contact
+                                </a>
+                                <a href="#" class="btn btn-outline-primary">
+                                    <i class="fas fa-user me-1"></i> Biography
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Strategies Section -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5 section-title mx-auto">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Iterambere</h5>
+            <h1>INGAMBA ISHURIMTC RIFITE MU GUTEZA IMBERE N'UBUMENYINGIRO</h1>
+            <div class="d-flex justify-content-center">
+                <div class="w-50" style="height: 3px; background-color: var(--primary-color);"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="strategy-item">
+                    <div class="strategy-icon">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <h4>Kwaguka</h4>
+                    <p>KWAGUKA MU BIKORESHO NO MU NYUBAKO KU BURYO ISHURI MTC RYAKIRA URUBYIRUKO RWINSHI RUSHOBOKA MU MASHAMI ANYURANYE NO MU BYICIRO BINYURANYE</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="strategy-item">
+                    <div class="strategy-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h4>Ubukangurambaga</h4>
+                    <p>GUKOMEZA GUKORA ABUKANGURAMBAGA MU RUBYIRUKO NDETSE N'ABANTU BAKURU BASHISHIKARIZWA KWIGA IMYUGA N'UBUMENYINGIRO</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="strategy-item">
+                    <div class="strategy-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Ubufatanye</h4>
+                    <p>KONGERA IMBARAGA MU MIKORANIRE N'ABIKORERA MURWEGO RWO KURUSHAKO GUHUZA ABANYESHURI BACU N'ABO BAFATIRAHO ICYITEGEREREZO NDETSE NO KUGIRANGO ABANYESHURI BACU BAJYE BASOHOKA BAZI NEZA IBIKENEWE KU ISOKO RY'UMURIMO KANDI BABYUJUJE</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="strategy-item">
+                    <div class="strategy-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4>Ikoranabuhanga</h4>
+                    <p>GUKOMEZA KUGENDANA N'IKORANABUHANGA KUKO UKO BUCYA TECHNOLOGY IRAZAMUKA KUGIRA NGO TUTAZISANGA TWASIGAYE INYUMA KU ISOKO RY'UMURIMO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features & Mission Section -->
+<div class="container-fluid py-5 bg-light">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="m-0"><i class="fas fa-star me-2"></i> UMWIHARIKO W'ISHURI MTC</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="feature-item">
+                            <strong>1.</strong> GUHA AKAZI ABANYESHURI BARANGIJE MURI MTC
+                        </div>
+                        <div class="feature-item">
+                            <strong>2.</strong> KUZENGURUKA IGIHUGU CYOSE DUSHISHIKARIZA URUBYIRUKO CYANE URUBA RURI KURANGIZA O LEVEL KUZAZA KWIGA IMYUGA N'UBUMENYINGIRO
+                        </div>
+                        <div class="feature-item">
+                            <strong>3.</strong> GUHUZA ABANYESHURI N'ABASHORAMARI BAFITE COMPANIES ZIKORA IBIJYANYE N'IBYO TWIGISHA MU RWEGO RWO KUBAKANGURIRA KWIHANGIRA IMIRIMO UBWABO NDETSE NO KONGERA AMAHIRWE YO KUBONA AKAZI MURI IZO COMPANIES
+                        </div>
+                        <div class="feature-item">
+                            <strong>4.</strong> KUJYANA ABANYESHURI MUNGENDOSHURI MU MASHURI MAKURU Y'IBUMENYINGIRO RP COLLEGES MU RWEGO RWO KUBAKUNDISHA KWIGA CYANE KUGIRA NGO NABO BATSINDIRE KUZAKOMEREZAYO
+                        </div>
+                        <div class="feature-item">
+                            <strong>5.</strong> MU RWEGO RWO GUTEZA IMBERE AKARERE ISHURI RIKORERAMO, ISHURI RITANGA UMUSANZU MUKUBAKIRA ABATISHOBOYE, MU KUBISHYURIRA UBWISUNGANE MU KWIVUZA, MUGUCA NYAKATSI YO KUBURIRI,…. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="m-0"><i class="fas fa-bullseye me-2"></i> MISSIONS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mission-item">
+                            <strong>1.</strong> KWIGISHA, GUTOZA NO GUSHYIRA RY'UMURIMO ABATEKINISIYE BASHOBOYE KANDI BASHOBOTSE
+                        </div>
+                        <div class="mission-item">
+                            <strong>2.</strong> KWIGISHA, GUTOZA NO GUSHYIRA KU ISOKO RY'UMURIMO ABIHANGIRA IMIRIMO BENSHI BAGATANGA N'AKAZI KUBANDI KURUTA ABAGASABA
+                        </div>
+                        <div class="mission-item">
+                            <strong>3.</strong> KUGIRA URUHARE MU ITERAMBERE RY'IGIHUGU CYACU MU BIREBANA N'IMYUGA N'UBUMENYINGIRO
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<!-- Bootstrap & Font Awesome JS -->
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+    <div class="row pt-5">
+        <div class="col-lg-7 col-md-12">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Mwatubona</h5>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Muhanga, nyamabuye, Gahogo, Nyarucyamu 2</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+250 0784990502</p>
+                    <p><i class="fa fa-envelope mr-2"></i>muhatech20@yahoo.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Amashami yacu</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>ubukanishi</a>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>ubwubatsi</a>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Ikoranabuhanga</a>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Icungamari</a>
+                        <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>ubutetsi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-12 mb-5">
+            <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Icyerekezo</h5>
+            <p>KUBA ISHURI RY’IKITEGEREREZO MU KWIGISHA IMYUGA N’UBUMENYINGIRO BIFITE IREME NO GUTOZA ABANTU KWIHANGIRA IMIRIMO</p>
+            <div class="w-100">
+                <div class="input-group">
+                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary px-4">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+    <div class="row">
+        <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white">&copy; <a href="#">Byakozwe </a>. binategurwa nishuri ry'ikorabuhanga L3SWD 2025
+            </p>
+        </div>
+        <div class="col-lg-6 text-center text-md-right">
+            <ul class="nav d-inline-flex">
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">Privacy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">Terms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white py-0" href="#">Help</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
 </body>
 
 </html>
